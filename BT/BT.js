@@ -37,7 +37,7 @@ function quanLyTuyenSinh() {
       const dcHoiDong = +document.querySelector("#dc").value;
       const scores = document.querySelectorAll(".score");
       const kvUuTien = document.querySelector("#khuVuc").value;
-      const dtUuTien = document.querySelector("#doiTuong").value;
+      const dtUuTien = document.querySelector("#doiTuong-1").value;
 
       let diemChuaUuTien = 0;
 
@@ -145,7 +145,16 @@ function tinhThueTNCN() {
       const thue = xuLyThue(thuNhapChiuThue);
       const thuePercent = thue * 100;
 
-      messEl.innerHTML = name + " phải chịu thuế:" + thuePercent + "%";
+      messEl.innerHTML =
+        name +
+        "Thu nhập chịu thuế: " +
+        new Intl.NumberFormat("de-DE", {
+          style: "currency",
+          currency: "vnd",
+        }).format(thuNhapChiuThue) +
+        " phải chịu thuế:" +
+        thuePercent +
+        "%";
     };
   }
 }

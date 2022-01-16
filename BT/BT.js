@@ -97,7 +97,8 @@ function getPrice() {
       const result =
         "Khách hàng:" +
         nameValue +
-        "-Tiền điện:" +
+        "</br>" +
+        "Tiền điện:" +
         new Intl.NumberFormat("de-DE", {
           style: "currency",
           currency: "vnd",
@@ -146,13 +147,16 @@ function tinhThueTNCN() {
       const thuePercent = thue * 100;
 
       messEl.innerHTML =
+        "Họ tên:" +
         name +
+        "</br>" +
         "Thu nhập chịu thuế: " +
         new Intl.NumberFormat("de-DE", {
           style: "currency",
           currency: "vnd",
         }).format(thuNhapChiuThue) +
-        " phải chịu thuế:" +
+        "</br>" +
+        " Phải chịu thuế:" +
         thuePercent +
         "%";
     };
@@ -217,7 +221,12 @@ function getResult() {
       const totalPrice = getPriceByType(type);
 
       messEl.innerHTML =
-        "Mã Khách Hàng:" + maKH + "-Giá tính tiền cáp:" + totalPrice + "$";
+        "Mã Khách Hàng:" +
+        maKH +
+        "</br>" +
+        "Giá tính tiền cáp:" +
+        totalPrice +
+        "$";
     };
   }
 }
